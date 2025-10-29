@@ -1,7 +1,14 @@
 html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+body {
+    background-image:url('../src/bg.jpg');
+    background-color: rgb(0, 86, 126);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #top {
@@ -29,7 +36,9 @@ html, body {
     display: flex;
     justify-content: space-between;
     gap: 20%;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 999;
     background-color: lightgray;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -71,14 +80,6 @@ html, body {
 
 
 
-
-body {
-    background-image:url('../src/bg.jpg');
-    background-color: rgb(0, 86, 126);
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 0;
-    margin-right: 0;
-}
 
 #wrapper {
     display: block;
@@ -146,6 +147,7 @@ body {
 .whole {
     background-color: #acdbf8;
     border-radius: 32px;
+    margin-top: 2em;
     margin-bottom: 2em;
     padding: 2em;
 }
@@ -159,8 +161,8 @@ footer {
     flex-wrap: wrap;
     flex-flow: column wrap;
     background-color: #506670;
-    box-shadow: 0 50vh 0 50vh #506670;
     color: #5095da;
+    box-shadow: 0 50vh 0 50vh #506670;
     text-align: center;
     align-items: center;
     justify-content: center;
