@@ -30,6 +30,11 @@ body {
     color: white;
 }
 
+#nav-sentinel {
+  height: 0px;           /* small marker */
+  width: 100%;
+  pointer-events: none;  /* not interactive */
+}
 #top-nav {
     height: 2.5em;
     display: flex;
@@ -44,6 +49,12 @@ body {
     align-items: center;
     padding-left: 15%;
     padding-right: 15%;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+#top-nav.scrolled {
+  background-color: rgba(211,211,211,0.75);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
 }
 #top-nav nav {
     display: flex;
@@ -175,6 +186,9 @@ footer a:visited { color: #5095da; }
 footer a:hover { color: #b4c8d3; }
 
 @media screen and (max-width: 768px) {
+    #wrapper h1 {
+        font-size: x-large;
+    }
     .split {
         grid-template-columns: 100%;
     }
