@@ -27,9 +27,9 @@ a { text-decoration: none; }
 #top a:hover { color: lightgray; }
 
 #nav-sentinel {
-  height: 0px;           /* small marker */
+  height: 0;
   width: 100%;
-  pointer-events: none;  /* not interactive */
+  pointer-events: none;
 }
 #top-nav {
     height: 2.5em;
@@ -157,7 +157,6 @@ a { text-decoration: none; }
     text-align: center;
 }
 .split-right img {
-    display: block;
     max-width: 100%;
     border-radius: 16px;
     margin-left: auto;
@@ -268,7 +267,8 @@ footer a:hover { color: #b4c8d3; }
         grid-template-columns: 100%;
     }
     .split-right {
-        display: none;
+        display: block;
+        margin-top: 2em;
     }
     .split-left {
         border-radius: 16px;
