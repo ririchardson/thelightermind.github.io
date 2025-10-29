@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>The Lighter Mind | Blog</title>
+        <title>The Lighter Mind | Contact</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/x-icon" href="./src/favicon.ico">
         <link rel="manifest" href="app.webmanifest">
@@ -41,7 +41,7 @@
         <div id="wrapper">
             <main>
                 <div class="whole">
-                    <h1>Sample Sample Sample Sample Sample</h1>
+                    <h1>Contact Me</h1>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -51,6 +51,36 @@
                         pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
                         culpa qui officia deserunt mollit anim id est laborum.
                     </p>
+                </div>
+                <div class="split">
+                    <div class="whole" style="background-color: #88bddd;">
+                        <h2>Address</h2>
+                        1234 S Sample Drive<br>
+                        Sample Town, State<br>
+                        12345
+                        <h2>Phone</h2>
+                        <a href="tel:8136036604">(813) 603-6604</a>
+                        <h2>Email</h2>
+                        <a href="mailto:TheLighterMind@proton.me">TheLighterMind@proton.me</a>
+                    </div>
+                    <div class="split-left">
+                        <h2>Send Message</h2>
+                        <form action="mailto:TheLighterMind@proton.me" method="post" enctype="text/plain" class="contact-form">
+                            <label for="name"></label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                            <label for="email"></label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                            <label for="subject"></label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+
+                            <label for="message"></label>
+                            <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
+
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
                 </div>
             </main>
         </div>
