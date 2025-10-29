@@ -1,3 +1,9 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* prevent horizontal scroll */
+}
+
 #top {
     height: 2.5em;
     display: flex;
@@ -10,7 +16,6 @@
     padding-left: 20%;
     padding-right: 20%;
     position: relative;
-    margin-top: -8px;
 }
 #top a {
     text-decoration: none;
@@ -41,6 +46,10 @@
 #top-nav nav a:link { color: #283890; }
 #top-nav nav a:visited { color: #283890; }
 #top-nav nav a:hover { color: #3f60d4; }
+
+#top, #top-nav {
+    max-width: 100%;
+}
 
 #header {
     background-color: #bcd8e7;
@@ -188,5 +197,4 @@ footer a:hover { color: #b4c8d3; }
     #top-nav nav {
         gap: 1.75em;
     }
-
-} 
+}
