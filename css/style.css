@@ -189,6 +189,9 @@ footer a:hover { color: #b4c8d3; }
         padding-left: 12.5%;
         padding-right: 12.5%;
     }
+    #top a, #top-nav a {
+        font-size: small;
+    }
     #top-nav {
         gap: 1.75em;
         padding-left: 10%;
@@ -197,4 +200,5 @@ footer a:hover { color: #b4c8d3; }
     #top-nav nav {
         gap: 1.75em;
     }
+
 }
