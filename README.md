@@ -1,3 +1,3 @@
 # thelightermind.github.io
 
-<h1>test</h1>
+<h1 style="text-align: center;">test</h1>
