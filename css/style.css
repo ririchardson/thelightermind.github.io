@@ -201,4 +201,7 @@ footer a:hover { color: #b4c8d3; }
         gap: 1.75em;
     }
 
+    .split-left img {
+        max-width: 90%;
+    }
 }
