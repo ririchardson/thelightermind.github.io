@@ -193,7 +193,7 @@ a { text-decoration: none; }
 .whole-dark a:hover { color: #ebf7fe; }
 
 /* Start hidden */
-.whole, .whole-dark, .split {
+.whole, .whole-dark, .split-left, .split-right {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;

@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  const fadeEls = document.querySelectorAll('.whole, .whole-dark, .split');
+  const fadeEls = document.querySelectorAll('.whole, .whole-dark, .split-left, .split-right');
 
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -40,4 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.15 }); // triggers when 15% visible
 
   fadeEls.forEach(el => observer.observe(el));
+
+  // **Workaround for mobile: tiny scroll to trigger observer**
+  window.addEventListener('load', () => {
+    window.scrollBy(0, 1); // scroll down 1px
+    window.scrollBy(0, -1); // scroll back up 1px
+  });
 });
