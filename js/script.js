@@ -25,4 +25,19 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   io.observe(sentinel);
+
+
+
+  const fadeEls = document.querySelectorAll('.whole, .whole-dark, .split');
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+        observer.unobserve(entry.target); // stops observing once faded in
+      }
+    });
+  }, { threshold: 0.15 }); // triggers when 15% visible
+
+  fadeEls.forEach(el => observer.observe(el));
 });

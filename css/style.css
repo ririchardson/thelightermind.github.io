@@ -91,6 +91,7 @@ a { text-decoration: none; }
     z-index: 1;
     margin: auto;
     background-color: #88bddd;
+    background: linear-gradient(180deg, #88bddd 0%, #3785b6 100%);
     box-shadow: 0 32px 64px rgba(0, 0, 0, 0.25);
     background-size: 100% 100%;
     padding: 2em;
@@ -107,7 +108,7 @@ a { text-decoration: none; }
     position: relative;
     z-index: 1;
     margin: auto;
-    background-color: #4f6f83;
+    background: linear-gradient(180deg, #4f6f83 0%, #324957 100%);
     color: #bee6ff;
     box-shadow: 0 32px 64px rgba(0, 0, 0, 0.25);
     background-size: 100% 100%;
@@ -158,7 +159,6 @@ a { text-decoration: none; }
 .split-right img {
     display: block;
     max-width: 100%;
-    max-height: 100%;
     border-radius: 16px;
     margin-left: auto;
     margin-right: auto;
@@ -181,7 +181,7 @@ a { text-decoration: none; }
 .whole a { color: black; }
 
 .whole-dark {
-    background-color: #4f6f83;
+    background-color: transparent;
     color: #bee6ff;
     margin-top: 2em;
     margin-bottom: 2em;
@@ -191,6 +191,19 @@ a { text-decoration: none; }
 .whole-dark p { color: #bee6ff; }
 .whole-dark a { color: #bee6ff; }
 .whole-dark a:hover { color: #ebf7fe; }
+
+/* Start hidden */
+.whole, .whole-dark, .split {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Fade-in when visible */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 .contact-form {
     display: flex;
