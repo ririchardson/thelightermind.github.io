@@ -101,6 +101,10 @@ p {
 #header a:link { color: #283890; }
 #header a:visited { color: #1f2f7a; }
 #header a:hover { color: #3f60d4; }
+#header img {
+    width: 192px;
+    height: 192px;
+}
 
 
 
@@ -356,7 +360,7 @@ footer a:hover { color: #b4c8d3; }
     }
     .split-left img {
         width: 90%;
-        max-width: 75%;
+        max-width: 50%;
     }
 }
 
@@ -386,6 +390,11 @@ footer a:hover { color: #b4c8d3; }
     }
     #top-nav nav {
         gap: 1.75em;
+    }
+
+    #header img {
+        width: 128px;
+        height: 128px;
     }
 
     #wrapper h1 {
