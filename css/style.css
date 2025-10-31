@@ -321,6 +321,9 @@ footer a:visited { color: #5095da; }
 footer a:hover { color: #b4c8d3; }
 
 @media screen and (max-width: 1080px) {
+    #top {
+        gap: 1.75em;
+    }
     .split {
         grid-template-columns: 100%;
     }
@@ -344,7 +347,7 @@ footer a:hover { color: #b4c8d3; }
 
 @media screen and (max-width: 768px) {
     #top {
-        gap: 2em;
+        gap: 1.75em;
         padding-left: 10%;
         padding-right: 10%;
     }
@@ -359,7 +362,7 @@ footer a:hover { color: #b4c8d3; }
         gap: 0.33em;
     }
     #top a, #top-nav a {
-        font-size: small;
+        font-size: smaller;
     }
     #top-nav {
         gap: 1.75em;
