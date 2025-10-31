@@ -23,8 +23,24 @@ a { text-decoration: none; }
     padding-right: 20%;
     position: relative;
 }
+#top img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%);
+}
 #top a:link { color: white; }
 #top a:hover { color: lightgray; }
+
+.phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+.mail {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
 
 #nav-sentinel {
   height: 0;
@@ -91,7 +107,7 @@ a { text-decoration: none; }
     z-index: 1;
     margin: auto;
     background-color: #88bddd;
-    background: linear-gradient(180deg, #88bddd 0%, #3785b6 100%);
+    background: linear-gradient(135deg, #88bddd 0%, #3785b6 100%);
     box-shadow: 0 32px 64px rgba(0, 0, 0, 0.25);
     background-size: 100% 100%;
     padding: 2em;
@@ -108,7 +124,7 @@ a { text-decoration: none; }
     position: relative;
     z-index: 1;
     margin: auto;
-    background: linear-gradient(180deg, #4f6f83 0%, #324957 100%);
+    background: linear-gradient(135deg, #4f6f83 0%, #324957 100%);
     color: #bee6ff;
     box-shadow: 0 32px 64px rgba(0, 0, 0, 0.25);
     background-size: 100% 100%;
@@ -121,13 +137,44 @@ a { text-decoration: none; }
     text-align: center;
 }
 
+.whole {
+    background-color: #acdbf8;
+    background: linear-gradient(135deg, #acdbf8 0%, #bd9aff 150%);
+    border-radius: 32px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 2em;
+}
+.whole h2 { color: #283890; }
+.whole p {
+    color: black;
+    text-indent: 3em;
+}
+.whole a { color: black; }
+
+.whole-dark {
+    background-color: transparent;
+    color: #bee6ff;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 2em;
+}
+.whole-dark h2 { color: #66b5ff; }
+.whole-dark p { color: #bee6ff; }
+.whole-dark a { color: #bee6ff; }
+.whole-dark a:hover { color: #ebf7fe; }
+
 .split {
     display: grid;
     grid-template-columns: 50% 50%;
     margin-bottom: 4em;
 }
 .split-left {
-    background-color: #acdbf8;
+    background: linear-gradient(135deg, #acdbf8 0%, #bd9aff 150%);
     border-radius: 32px;
     padding: 2em;
 }
@@ -165,32 +212,6 @@ a { text-decoration: none; }
     margin-top: 3em;
     margin-bottom: 3em;
 }
-
-.whole {
-    background-color: #acdbf8;
-    border-radius: 32px;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    padding: 2em;
-}
-.whole h2 { color: #283890; }
-.whole p {
-    color: black;
-    text-indent: 3em;
-}
-.whole a { color: black; }
-
-.whole-dark {
-    background-color: transparent;
-    color: #bee6ff;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    padding: 2em;
-}
-.whole-dark h2 { color: #66b5ff; }
-.whole-dark p { color: #bee6ff; }
-.whole-dark a { color: #bee6ff; }
-.whole-dark a:hover { color: #ebf7fe; }
 
 /* Start hidden */
 .whole, .whole-dark, .split-left, .split-right {
@@ -259,6 +280,7 @@ footer {
     flex-wrap: wrap;
     flex-flow: column wrap;
     background-color: #506670;
+    background: linear-gradient(180deg, #506670 0%, #394850 100%);
     color: #5095da;
     box-shadow: 0 50vh 0 50vh #506670;
     text-align: center;
@@ -274,24 +296,20 @@ footer a:visited { color: #5095da; }
 footer a:hover { color: #b4c8d3; }
 
 @media screen and (max-width: 768px) {
-    #wrapper h1 {
-        font-size: x-large;
-    }
-    .split {
-        grid-template-columns: 100%;
-    }
-    .split-right {
-        display: block;
-        margin-top: 2em;
-    }
-    .split-left {
-        border-radius: 16px;
-        padding: 1.5em;
-    }
     #top {
         gap: 2em;
         padding-left: 12.5%;
         padding-right: 12.5%;
+    }
+    #top img {
+        width: 20px;
+        height: 20px;
+    }
+    .phone {
+        gap: 0.33em;
+    }
+    .mail {
+        gap: 0.33em;
     }
     #top a, #top-nav a {
         font-size: small;
@@ -305,7 +323,31 @@ footer a:hover { color: #b4c8d3; }
         gap: 1.75em;
     }
 
+    #wrapper h1 {
+        font-size: x-large;
+    }
+
+    .split {
+        grid-template-columns: 100%;
+    }
+    .split-right {
+        display: block;
+        margin-top: 2em;
+    }
+    .split-left {
+        border-radius: 16px;
+        padding: 1.5em;
+    }
     .split-left img {
         max-width: 90%;
+    }
+
+    .whole {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .whole-dark {
+        margin-left: 2em;
+        margin-right: 2em;
     }
 }
