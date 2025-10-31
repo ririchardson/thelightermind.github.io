@@ -345,8 +345,8 @@ footer a:hover { color: #b4c8d3; }
 @media screen and (max-width: 768px) {
     #top {
         gap: 2em;
-        padding-left: 12%;
-        padding-right: 12%;
+        padding-left: 10%;
+        padding-right: 10%;
     }
     #top img {
         width: 20px;
@@ -389,16 +389,16 @@ footer a:hover { color: #b4c8d3; }
     .split-left {
         border-radius: 16px;
         padding: 1.5em;
-        margin-left: 2.5em;
-        margin-right: 2.5em;
+        margin-left: 1.5em;
+        margin-right: 1.5em;
     }
     .split-left img {
         width: 90%;
     }
 
     .whole {
-        margin-left: 2em;
-        margin-right: 2em;
+        margin-left: 1em;
+        margin-right: 1em;
     }
     .whole img {
         width: calc(100% - 1em);
