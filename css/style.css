@@ -147,7 +147,7 @@ p {
     background: linear-gradient(135deg, #acdbf8 0%, #bd9aff 150%);
     border-radius: 32px;
     margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
     margin-left: 15%;
     margin-right: 15%;
     padding: 2em;
@@ -187,6 +187,21 @@ p {
 .split {
     display: grid;
     grid-template-columns: 50% 50%;
+    background: linear-gradient(135deg, #71daed 0%, #8e67f9 100%);
+    background-color: white;
+    border-radius: 32px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-bottom: 4em;
+}
+.split-dark {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background: linear-gradient(135deg, #41808b 0%, #573e9a 100%);
+    background-color: white;
+    border-radius: 32px;
+    padding-top: 2em;
+    padding-bottom: 2em;
     margin-bottom: 4em;
 }
 .split-left {
@@ -324,7 +339,7 @@ footer a:hover { color: #b4c8d3; }
     #top {
         gap: 1.75em;
     }
-    .split {
+    .split, .split-dark {
         grid-template-columns: 100%;
     }
     .split-right {
@@ -348,8 +363,8 @@ footer a:hover { color: #b4c8d3; }
 @media screen and (max-width: 768px) {
     #top {
         gap: 1.75em;
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 8%;
+        padding-right: 8%;
     }
     #top img {
         width: 20px;
@@ -377,7 +392,7 @@ footer a:hover { color: #b4c8d3; }
         font-size: x-large;
     }
 
-    .split {
+    .split, .split-dark {
         grid-template-columns: 100%;
     }
     .split-right {
