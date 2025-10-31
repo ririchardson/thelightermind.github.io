@@ -400,6 +400,9 @@ footer a:hover { color: #b4c8d3; }
         margin-left: 2em;
         margin-right: 2em;
     }
+    .whole img {
+        width: calc(100% - 1em);
+    }
     .whole-dark {
         margin-left: 2em;
         margin-right: 2em;
