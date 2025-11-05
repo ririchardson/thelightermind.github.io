@@ -2,11 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const nav = document.getElementById('top-nav');
   const sentinel = document.getElementById('nav-sentinel');
 
-  if (!nav || !sentinel) {
-    console.warn('Missing #top-nav or #nav-sentinel — make sure the sentinel is right after #top.');
-    return;
-  }
-
   // IntersectionObserver to toggle "scrolled" class when sentinel leaves the viewport
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
