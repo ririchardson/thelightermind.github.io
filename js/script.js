@@ -41,4 +41,14 @@ document.addEventListener('DOMContentLoaded', function () {
     window.scrollBy(0, 1); // scroll down 1px
     window.scrollBy(0, -1); // scroll back up 1px
   });
+
+
+
+  const buttonLearnMore = document.getElementById("learn-more");
+
+  if (buttonLearnMore) {
+      buttonLearnMore.addEventListener("click", () => {
+        window.location.href = "about.html";
+      });
+  }
 });
