@@ -15,9 +15,11 @@ fetch(url)
 
     const container = document.querySelector("#wrapper main");
 
-    posts.forEach((col, i) => {
+    posts.forEach(col => {
       const post = document.createElement("div");
       post.classList.add("whole");
+
+      let pendingColor = null; // holds color for the next text/paragraph
 
       col.forEach(line => {
         if (!line) return;
@@ -34,22 +36,43 @@ fetch(url)
             post.innerHTML += `<h2>${value}</h2>`;
             break;
 
-          case "paragraph":
-            post.innerHTML += `<p>${value}</p>`;
+          case "paragraph": {
+            let style = "";
+            if (pendingColor) {
+              style = `style="color:${pendingColor};"`;
+              pendingColor = null;
+            }
+            post.innerHTML += `<p class="indent" ${style}>${value}</p>`;
             break;
+          }
+
+          case "text": {
+            let style = "";
+            if (pendingColor) {
+              style = `style="color:${pendingColor};"`;
+              pendingColor = null;
+            }
+            post.innerHTML += `<p ${style}>${value}</p>`;
+            break;
+          }
+
+          case "color": {
+            // Allow formats like color:#fff, color:red, or color:0,100,255
+            let colorValue = value;
+            if (/^\d{1,3},\d{1,3},\d{1,3}$/.test(value)) {
+              const [r, g, b] = value.split(",").map(Number);
+              colorValue = `rgb(${r}, ${g}, ${b})`;
+            }
+            pendingColor = colorValue;
+            break;
+          }
 
           case "image":
             post.innerHTML += `<img src="${value}" alt="">`;
             break;
 
-          case "quote":
-            post.innerHTML += `<blockquote>${value}</blockquote>`;
-            break;
-
           case "video": {
             let videoHTML = "";
-
-            // Try to extract YouTube video ID from various URL formats
             const ytMatch = value.match(
               /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/
             );
@@ -67,7 +90,6 @@ fetch(url)
                   </iframe>
                 </div>`;
             } else {
-              // fallback for direct mp4 or webm video links
               videoHTML = `
                 <video controls style="max-width:100%; border-radius:12px;">
                   <source src="${value}" type="video/mp4">
@@ -78,10 +100,6 @@ fetch(url)
             post.innerHTML += videoHTML;
             break;
           }
-
-          case "link":
-            post.innerHTML += `<p><a href="${value}" target="_blank" rel="noopener noreferrer">${value}</a></p>`;
-            break;
 
           default:
             post.innerHTML += `<p><strong>${tag}:</strong> ${value}</p>`;

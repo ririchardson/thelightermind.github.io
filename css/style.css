@@ -175,6 +175,9 @@ button:hover {
 .whole h2 { color: #283890; }
 .whole p {
     color: black;
+}
+.whole p.indent {
+    color: black;
     text-indent: 3em;
 }
 .whole a { color: black; }
@@ -255,6 +258,9 @@ button:hover {
     text-align: center;
 }
 .split-left p {
+    color: black;
+}
+.split-left p.indent {
     color: black;
     text-indent: 3em;
 }
@@ -454,7 +460,7 @@ footer a:hover { color: #b4c8d3; }
         margin-left: 1.5em;
         margin-right: 1.5em;
     }
-    .split-left p {
+    .split-left p.indent {
         text-indent: 2em;
     }
     .split-left img {
@@ -465,7 +471,7 @@ footer a:hover { color: #b4c8d3; }
         margin-left: 1em;
         margin-right: 1em;
     }
-    .whole p {
+    .whole p.indent {
         text-indent: 2em;
     }
     .whole img {
