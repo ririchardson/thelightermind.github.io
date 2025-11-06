@@ -33,7 +33,7 @@ fetch(url)
             break;
 
           case "header":
-            post.innerHTML += `<h2>${value}</h2>`;
+            post.innerHTML += `<h2 style="text-align:center;">${value}</h2>`;
             break;
 
           case "paragraph": {
