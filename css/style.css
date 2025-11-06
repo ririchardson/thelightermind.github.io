@@ -8,6 +8,7 @@ body {
     background-color: rgb(0, 86, 126);
     font-family: Arial, Helvetica, sans-serif;
 }
+
 a { text-decoration: none; }
 
 p {
@@ -42,11 +43,6 @@ button:hover {
     padding-right: 20%;
     position: relative;
 }
-#top img {
-    width: 24px;
-    height: 24px;
-    filter: invert(100%);
-}
 #top a:link { color: white; }
 #top a:hover { color: lightgray; }
 
@@ -59,6 +55,12 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 0.5em;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%);
 }
 
 #nav-sentinel {

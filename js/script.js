@@ -6,16 +6,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // sentinel is visible -> we're at the top -> remove class
         nav.classList.remove('scrolled');
       } else {
-        // sentinel gone -> user scrolled past #top -> add class
         nav.classList.add('scrolled');
       }
     });
   }, {
-    root: null,         // viewport
-    threshold: 0,       // fire as soon as any part crosses
+    root: null,
+    threshold: 0,
     rootMargin: '0px'
   });
 
@@ -23,23 +21,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  const fadeEls = document.querySelectorAll('.whole, .whole-dark, .split-left, .split-right');
+  // ---- Fade-in observer ----
+  function observeFadeElements() { // 👈 wrapped in a function
+    const fadeEls = document.querySelectorAll('.whole, .whole-dark, .split-left, .split-right');
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target); // stops observing once faded in
-      }
-    });
-  }, { threshold: 0.15 }); // triggers when 15% visible
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
 
-  fadeEls.forEach(el => observer.observe(el));
+    fadeEls.forEach(el => observer.observe(el));
+  }
+
+  // Run once on page load
+  observeFadeElements();
+
+  // 👇 Make it accessible globally so blog.js can call it again
+  window.observeFadeElements = observeFadeElements;
+
+
 
   // **Workaround for mobile: tiny scroll to trigger observer**
   window.addEventListener('load', () => {
-    window.scrollBy(0, 1); // scroll down 1px
-    window.scrollBy(0, -1); // scroll back up 1px
+    window.scrollBy(0, 1);
+    window.scrollBy(0, -1);
   });
 
 
