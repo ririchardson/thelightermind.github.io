@@ -107,6 +107,7 @@ fetch(url)
       });
 
       container.appendChild(post);
+      
       window.observeFadeElements();
     });
   })
