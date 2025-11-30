@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // ---- Fade-in observer ----
-  function observeFadeElements() { // 👈 wrapped in a function
+  function observeFadeElements() { // wrapped in a function
     const fadeEls = document.querySelectorAll('.whole, .whole-dark, .split-left, .split-right');
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Run once on page load
   observeFadeElements();
 
-  // 👇 Make it accessible globally so blog.js can call it again
+  // Make it accessible globally so blog.js can call it again
   window.observeFadeElements = observeFadeElements;
 
 
@@ -54,10 +54,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   const buttonLearnMore = document.getElementById("learn-more");
+  const buttonSchedule = document.getElementById("schedule");
 
   if (buttonLearnMore) {
-      buttonLearnMore.addEventListener("click", () => {
-        window.location.href = "about.html";
-      });
+    buttonLearnMore.addEventListener("click", () => {
+      window.location.href = "about.html";
+    });
+  }
+  if (buttonSchedule) {
+    buttonSchedule.addEventListener("click", () => {
+      window.location.href = "schedule.html";
+    });
   }
 });
