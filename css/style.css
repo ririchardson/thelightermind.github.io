@@ -598,21 +598,6 @@ footer a:hover { color: #b4c8d3; }
   }
 }
 
-@media screen and (max-width: 480px) {
-  .session-type-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
-/* Mobile spacing */
-@media screen and (max-width: 480px) {
-  #disclaimer-box {
-    padding: 2em 1.5em;
-  }
-}
-
 @media screen and (max-width: 1080px) {
     #top {
         gap: 1.75em;
@@ -639,6 +624,29 @@ footer a:hover { color: #b4c8d3; }
 }
 
 @media screen and (max-width: 768px) {
+    .session-type-grid {
+        grid-template-columns: 1fr;
+    }
+    .session-format {
+        flex-direction: column;   /* stack vertically */
+        gap: 1em;
+    }
+
+    .format-btn {
+        width: 100%;              /* full width of container */
+        max-width: 100%;
+        min-width: 0;             /* overrides your 200px min */
+        box-sizing: border-box;
+    }
+
+    .calendar-wrapper {
+        padding: 1.25em;          /* prevents inner overflow */
+    }
+    #disclaimer-box {
+        padding: 2em 1.5em;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
     #top {
         gap: 1.75em;
         padding-left: 8%;
