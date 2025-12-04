@@ -164,6 +164,7 @@ button:hover {
     text-align: center;
 }
 
+/* ADDED: faint shadow to .whole only (non-breaking) */
 .whole {
     background-color: #acdbf8;
     background: linear-gradient(135deg, #acdbf8 0%, #bd9aff 150%);
@@ -173,6 +174,7 @@ button:hover {
     margin-left: 15%;
     margin-right: 15%;
     padding: 2em;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 .whole h2 { color: #283890; }
 .whole p {
@@ -211,6 +213,7 @@ button:hover {
   object-fit: cover;
 }
 
+/* keep whole-dark unchanged except existing rules */
 .whole-dark {
     background-color: transparent;
     color: #bee6ff;
@@ -229,6 +232,7 @@ button:hover {
     border-radius: 16px;
 }
 
+/* ADDED: faint shadow to .split and .split-dark (non-breaking) */
 .split {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -238,6 +242,7 @@ button:hover {
     padding-top: 2em;
     padding-bottom: 2em;
     margin-bottom: 4em;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.12);
 }
 .split-dark {
     display: grid;
@@ -248,6 +253,7 @@ button:hover {
     padding-top: 2em;
     padding-bottom: 2em;
     margin-bottom: 4em;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.12);
 }
 .split-left {
     background: linear-gradient(135deg, #acdbf8 0%, #bd9aff 150%);
@@ -255,6 +261,8 @@ button:hover {
     padding: 2em;
     margin-left: 5%;
     margin-right: 5%;
+    /* ADDED: faint shadow to .split-left only */
+    box-shadow: 0 10px 22px rgba(0,0,0,0.10);
 }
 .split-left h2 {
     color: #283890;
@@ -299,6 +307,39 @@ button:hover {
     object-fit: cover;
     border-radius: 16px;
     margin: auto;
+}
+
+.reviews-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-top: 2em;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.review-card {
+    background: linear-gradient(135deg, #ffffff 0%, #e6f2ff 100%);
+    border-radius: 24px;
+    padding: 2em;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.review-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+.review-text {
+    font-style: italic;
+    font-size: 1.05em;
+    line-height: 1.6em;
+    color: #000;
+    margin-bottom: 1.25em;
+}
+.review-author {
+    font-weight: bold;
+    color: #283890;
+    text-align: right;
 }
 
 /* Start hidden */
@@ -382,6 +423,195 @@ footer a { text-decoration: none; }
 footer a:link { color: #88bddd; }
 footer a:visited { color: #5095da; }
 footer a:hover { color: #b4c8d3; }
+
+/* ===============================
+   DISCLAIMER POPUP STYLES
+   =============================== */
+
+.disclaimer-lock {
+  overflow: hidden;
+}
+
+#disclaimer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+#disclaimer-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#disclaimer-box {
+  background: linear-gradient(135deg, #bcd8e7 0%, #88bddd 100%);
+  border-radius: 24px;
+  padding: 2.5em;
+  max-width: 520px;
+  width: calc(100% - 3em);
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+  position: relative;
+  animation: disclaimerPop 0.35s ease;
+}
+
+@keyframes disclaimerPop {
+  from {
+    transform: translateY(20px) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+#disclaimer-box h2 {
+  color: #283890;
+  margin-top: 0;
+  margin-bottom: 0.75em;
+}
+
+#disclaimer-box p {
+  color: #000;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 1.75em;
+}
+
+#disclaimer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+#disclaimer-buttons button {
+  padding: 0.75em 1.5em;
+  border-radius: 10px;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#disclaimer-accept {
+  background-color: #283890;
+  color: white;
+}
+
+#disclaimer-accept:hover {
+  background-color: #3f60d4;
+}
+
+#disclaimer-close {
+  background-color: #cccccc;
+  color: #000;
+}
+
+#disclaimer-close:hover {
+  background-color: #bbbbbb;
+}
+
+
+/* ===============================
+   SCHEDULING FLOW UI
+   =============================== */
+
+.session-title {
+  text-align: center;
+  color: #66b5ff;
+  margin-bottom: 1.5em;
+}
+
+.session-type-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5em;
+  margin-bottom: 3em;
+}
+
+.session-card {
+  background: linear-gradient(135deg, #acdbf8 0%, #bd9aff 150%);
+  border-radius: 20px;
+  padding: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  color: #283890;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.session-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 34px rgba(0,0,0,0.25);
+}
+
+.session-card.selected {
+  outline: 3px solid #66b5ff;
+}
+
+.session-format {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-bottom: 3em;
+}
+
+.format-btn {
+  min-width: 200px;
+}
+
+.calendar-wrapper {
+  background: rgba(0,0,0,0.15);
+  border-radius: 20px;
+  padding: 2em;
+  text-align: center;
+}
+
+/* Fade logic */
+.hidden {
+  display: none;
+}
+
+.fade-block {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile */
+@media screen and (max-width: 900px) {
+  .session-type-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .session-type-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* Mobile spacing */
+@media screen and (max-width: 480px) {
+  #disclaimer-box {
+    padding: 2em 1.5em;
+  }
+}
 
 @media screen and (max-width: 1080px) {
     #top {

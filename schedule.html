@@ -43,39 +43,35 @@
 
         <div id="wrapper-dark">
             <main>
-                    <h1>
-                        Ready to schedule a session?<br>
-                        Fill out the information below to get started!
-                    </h1>
-                <div class="split-dark">
-                    <div class="whole-dark">
-                        <h2>Address</h2>
-                        1234 S Sample Drive<br>
-                        Sample Town, State<br>
-                        12345
-                        <h2>Phone</h2>
-                        <a href="tel:8136036604">(813) 603-6604</a>
-                        <h2>Email</h2>
-                        <a href="mailto:TheLighterMind@proton.me">TheLighterMind@proton.me</a>
+                <h1>
+                    Ready to schedule a session?<br>
+                    Fill out the information below to get started!
+                </h1>
+                <div class="whole-dark" style="border-radius: 32px;background: linear-gradient(135deg, #41808b 0%, #573e9a 100%);">
+
+                <h2 class="session-title">Choose your session type:</h2>
+
+                <div class="session-type-grid">
+                    <div class="session-card" data-type="hypnotherapy">Hypnotherapy</div>
+                    <div class="session-card" data-type="meditation">Meditation & Breathwork</div>
+                    <div class="session-card" data-type="ayurveda">Ayurvedic Lifestyle Discovery</div>
+                    <div class="session-card" data-type="hope">Droplets of Hope</div>
+                </div>
+
+                <h2 class="session-title hidden" id="format-title">Choose your session format:</h2>
+
+                <div class="session-format hidden" id="format-select">
+                    <button class="format-btn" data-format="zoom">Zoom Session</button>
+                    <button class="format-btn" data-format="inperson">In-Person Session</button>
+                </div>
+
+                <div class="calendar-wrapper hidden" id="calendar-wrapper">
+                    <h2 class="session-title">Select an available date:</h2>
+                    <div id="calendar-placeholder">
+                    <p>Calendar will load here from Google Sheets.</p>
                     </div>
-                    <div class="split-left">
-                        <h2>Send Message</h2>
-                        <form action="mailto:TheLighterMind@proton.me" method="post" enctype="text/plain" class="contact-form">
-                            <label for="name"></label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
 
-                            <label for="email"></label>
-                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
-
-                            <label for="subject"></label>
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-
-                            <label for="message"></label>
-                            <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
-
-                            <button type="submit">Send Message</button>
-                        </form>
-                    </div>
                 </div>
             </main>
         </div>
